@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            
-            <div className="w-12 h-12 flex items-center cursor-pointer z-10">
-                <img src="/allSVG/logo.svg" alt="Logo" />
+            {/* Logo */}            
+            <Link to="/" className="w-12 h-12 flex items-center cursor-pointer z-10">
+                <img src="./logo.svg" alt="Logo" />
                 <span className="font-bold ml-4 text-2xl">BLOG</span>
-            </div>
+            </Link>
 
             {/* Navbar Links for Desktop */}
-            <div className="hidden md:flex space-x-6 text-lg z-10">
-                <a href="#" className="text-gray-800 hover:text-gray-500">Home</a>
-                <a href="#" className="text-gray-800 hover:text-gray-500">About</a>
-                <a href="#" className="text-gray-800 hover:text-gray-500">Services</a>
-                <a href="#" className="text-gray-800 hover:text-gray-500">Contact</a>
+            <div className="hidden md:flex space-x-6 text-lg z-10 items-center">
+                <Link to="/" className="text-gray-800 hover:text-gray-500">Home</Link>
+                <Link to="#" className="text-gray-800 hover:text-gray-500">About</Link>
+                <Link to="#" className="text-gray-800 hover:text-gray-500">Services</Link>
+                <Link to="#" className="text-gray-800 hover:text-gray-500">Contact</Link>
+                <Link to="/login" className="text-white bg-blue-700 py-2 px-4 rounded-3xl hover:bg-blue-800 ">Login 🥳</Link>
             </div>
 
             {/* Hamburger Menu for Mobile */}
@@ -32,12 +33,13 @@ const Navbar = () => {
             </div>
 
             {/* Navbar Links for Mobile */}
-            <div className={`absolute top-0 w-full h-full ${isOpen?"right-0":"-right-full"} bg-purple-300 flex flex-col items-center justify-center space-y-6 transition-all duration-300`}>
-                <div className='absolute h-full bg-purple-300 w-full flex flex-col items-center justify-center space-y-6 text-lg '>
-                    <a href="#" className="text-gray-800 hover:text-gray-500">Home</a>
-                    <a href="#" className="text-gray-800 hover:text-gray-500">About</a>
-                    <a href="#" className="text-gray-800 hover:text-gray-500">Services</a>
-                    <a href="#" className="text-gray-800 hover:text-gray-500">Contact</a>
+            <div className={`absolute top-0 w-full h-full ${isOpen?"right-0":"-right-full"} bg-blue-200 flex flex-col items-center justify-center space-y-6 transition-all duration-300`}>
+                <div className='absolute h-full bg-blue-200 w-full flex flex-col items-center justify-center space-y-6 text-lg '>
+                    <Link to="/" className="text-gray-800 hover:text-gray-500">Home</Link>
+                    <Link to="#" className="text-gray-800 hover:text-gray-500">About</Link>
+                    <Link to="#" className="text-gray-800 hover:text-gray-500">Services</Link>
+                    <Link to="#" className="text-gray-800 hover:text-gray-500">Contact</Link>
+                    <Link to="/login" className="text-white bg-blue-700 py-2 px-4 rounded-3xl hover:bg-blue-800 ">Login 🥳</Link>
                 </div>
             </div>
         </div>
